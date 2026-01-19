@@ -1,0 +1,74 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.bubblesort;
+import java.util.Scanner;
+
+/**
+ *
+ * @author rutur
+ */
+public class BubbleSort 
+{
+    Scanner s=new Scanner(System.in);
+    int[] arr=new int[10];
+    int n;
+    void input()
+    {
+        System.out.println("Enter no.of elements");
+        n=s.nextInt();
+        System.out.println("Enter the unsorted elements to sort");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=s.nextInt();
+        }
+    }
+    void bsort()
+    {
+        int T;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n-1;j++)
+            {
+                if(arr[j]>arr[j+1])
+                {
+                    T=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=T;
+                }
+            }
+        }
+         System.out.println("The sorted list is : ");
+        for(int i=0;i<n;i++)
+        {
+            System.out.println(" "+arr[i]);
+        }
+    }
+
+    public static void main(String[] args) 
+    {
+        BubbleSort t=new BubbleSort();
+        while(true)
+        {
+             System.out.println("Menue is as follows : ");
+              System.out.println("1.Insert");
+               System.out.println("2.Sort");
+                System.out.println("Enter your choise");
+                Scanner s=new Scanner(System.in);
+                int ch= s.nextInt();
+                switch(ch)
+                {
+                    case 1:
+                        t.input();
+                        break;
+                    case 2:
+                        t.bsort();
+                        break;
+                    default:
+                         System.out.println("Enter your valid choise");
+                }
+        }
+        
+    }
+}
